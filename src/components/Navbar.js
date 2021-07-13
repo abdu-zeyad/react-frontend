@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-export class Navbar2 extends Component {
+export class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -104,4 +104,4 @@ export class Navbar2 extends Component {
   }
 }
 
-export default Navbar2;
+export default Navbar;
