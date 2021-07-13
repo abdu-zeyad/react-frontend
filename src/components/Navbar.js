@@ -47,7 +47,7 @@ export class Navbar2 extends Component {
         <nav className="navbar">
           <div className="navbar-container">
             <Link to="/" className="navbar-logo" onClick={this.closeMobileMenu}>
-              TRVL
+              SpaceGames
               <i class="fab fa-typo3" />
             </Link>
             <div className="menu-icon" onClick={this.handleClick}>
