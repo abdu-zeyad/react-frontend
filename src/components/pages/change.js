@@ -1,36 +1,35 @@
 import React, { Component } from "react";
-import "../App.css";
-import { Button } from "./Button";
-import "./HeroSection.css";
-export class change extends Component {
+import { Link } from "react-router-dom";
+
+export class CardItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <div>
-        <div className="hero-container">
-          <video src="/videos/video-2.mp4" autoPlay loop muted />
-          <h1>ADVENTURE AWAITS</h1>
-          <p>What are you waiting for?</p>
-          <div className="hero-btns">
-            <Button
-              className="btns"
-              buttonStyle="btn--outline"
-              buttonSize="btn--large"
+        {" "}
+        <li className="cards__item">
+          <Link className="cards__item__link" to={this.props.path}>
+            <figure
+              className="cards__item__pic-wrap"
+              data-category={this.props.label}
             >
-              GET STARTED
-            </Button>
-            <Button
-              className="btns"
-              buttonStyle="btn--primary"
-              buttonSize="btn--large"
-              onClick={console.log("hey")}
-            >
-              WATCH TRAILER <i className="far fa-play-circle" />
-            </Button>
-          </div>
-        </div>
+              <img
+                className="cards__item__img"
+                alt="TravelImage"
+                src={this.props.src}
+              />
+            </figure>
+            <div className="cards__item__info">
+              <h5 className="cards__item__text">{this.props.text}</h5>
+            </div>
+          </Link>
+        </li>
       </div>
     );
   }
 }
 
-export default change;
+export default CardItem;
