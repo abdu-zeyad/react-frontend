@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Button } from "./Button";
+import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 export class Navbar2 extends Component {
@@ -7,9 +7,10 @@ export class Navbar2 extends Component {
     super(props);
     this.state = {
       click: false,
-      //   button: false,
+      button: true,
     };
   }
+  componentDidMount = () => {};
   closeMobileMenu = () => {
     this.setState({
       click: false,
@@ -26,7 +27,21 @@ export class Navbar2 extends Component {
       });
     }
   };
+  showButton = () => {
+    if (window.innerWidth <= 960) {
+      this.setState({
+        button: false,
+      });
+    } else {
+      this.setState({
+        button: true,
+      });
+    }
+  };
+
   render() {
+    window.addEventListener("resize", this.showButton);
+
     return (
       <>
         <nav className="navbar">
@@ -79,9 +94,9 @@ export class Navbar2 extends Component {
                 </Link>
               </li>
             </ul>
-            {/* {this.state.button && (
+            {this.state.button && (
               <Button buttonStyle="btn--outline">SIGN UP</Button>
-            )} */}
+            )}
           </div>
         </nav>
       </>
